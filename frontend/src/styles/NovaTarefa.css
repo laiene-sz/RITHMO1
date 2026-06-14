@@ -1,0 +1,45 @@
+.nova-tarefa-card {
+  background: rgba(15, 20, 40, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 24px;
+  width: 90%;
+  max-width: 600px;
+}
+
+.nova-tarefa-card h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.campo-tarefa {
+  width: 90%;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.acoes-tarefa {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-radius: 12px;
+  
+}
+
+.acoes-tarefa button {
+  margin-left: auto;
+  padding: 12px 24px;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .acoes-tarefa {
+    flex-direction: column;
+  }
+
+  .acoes-tarefa button {
+    width: 100%;
+    margin-left: 0;
+  }
+}

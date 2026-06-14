@@ -1,0 +1,109 @@
+.lista-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.lista-titulo {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.tarefa-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.tarefa-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.tarefa-info h3 {
+    margin: 0;
+    color: #34495e;
+}
+
+.tarefa-info p {
+    margin: 5px 0;
+    color: #7f8c8d;
+}
+
+.prioridade {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.alta {
+    background: #e74c3c;
+}
+
+.media {
+    background: #f39c12;
+}
+
+.baixa {
+    background: #27ae60;
+}
+
+.tarefa-acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-editar {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-editar:hover {
+    background: #2980b9;
+}
+
+.btn-excluir {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-excluir:hover {
+    background: #c0392b;
+}
+.btn-concluir {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.status-concluida {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.status-pendente {
+    color: #e67e22;
+    font-weight: bold;
+}
