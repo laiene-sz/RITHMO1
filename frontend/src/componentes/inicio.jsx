@@ -20,7 +20,7 @@ function Inicio() {
         try {
 
             const resposta = await axios.get(
-                'http://localhost:3000/estatisticas'
+    `${import.meta.env.VITE_API_URL}/tarefas`
             );
 
             setDados(resposta.data);

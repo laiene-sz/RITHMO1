@@ -5,7 +5,6 @@ import '../styles/ListaTarefas.css';
 function ListaTarefas() {
 
     const [tarefas, setTarefas] = useState([]);
-
     const [editando, setEditando] = useState(null);
 
     const [titulo, setTitulo] = useState('');
@@ -22,7 +21,7 @@ function ListaTarefas() {
         try {
 
             const resposta = await axios.get(
-                'http://localhost:3000/tarefas'
+                `${import.meta.env.VITE_API_URL}/tarefas`
             );
 
             setTarefas(resposta.data);
@@ -54,7 +53,7 @@ function ListaTarefas() {
         try {
 
             await axios.put(
-                `http://localhost:3000/tarefas/${editando}`,
+                `${import.meta.env.VITE_API_URL}/tarefas/${editando}`,
                 {
                     titulo,
                     categoria,
@@ -90,7 +89,7 @@ function ListaTarefas() {
         try {
 
             await axios.delete(
-                `http://localhost:3000/tarefas/${id}`
+                `${import.meta.env.VITE_API_URL}/tarefas/${id}`
             );
 
             buscarTarefas();
@@ -110,7 +109,7 @@ function ListaTarefas() {
         try {
 
             await axios.put(
-                `http://localhost:3000/tarefas/concluir/${id}`
+                `${import.meta.env.VITE_API_URL}/tarefas/concluir/${id}`
             );
 
             buscarTarefas();

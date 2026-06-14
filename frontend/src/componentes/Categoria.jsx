@@ -23,7 +23,7 @@ function Categoria() {
 
             const resposta =
                 await axios.get(
-                    'http://localhost:3000/tarefas'
+    `${import.meta.env.VITE_API_URL}/tarefas`
                 );
 
             setTarefas(resposta.data);

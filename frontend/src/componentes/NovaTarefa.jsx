@@ -24,7 +24,7 @@ const adicionarTarefa = async () => {
   try {
 
     const resposta = await axios.post(
-      'http://localhost:3000/cadastrarTarefa',
+    `${import.meta.env.VITE_API_URL}/tarefas`,
       {
         titulo,
         prazo,
