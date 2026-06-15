@@ -5,7 +5,7 @@ import FormularioTarefa from './NovaTarefa.jsx';
 import Calendario from './Calendario.jsx';
 import Categoria from './Categoria.jsx';
 import Inicio from './Inicio.jsx';
-import ListaTarefas from './ListaTarefas';
+import ListaTarefas from './ListaTarefas.jsx';
 import Topo from './topo.jsx';
 import Rodape from './rodape.jsx';
 
