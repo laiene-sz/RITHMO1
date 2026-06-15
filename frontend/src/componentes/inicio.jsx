@@ -8,7 +8,9 @@ function Inicio() {
         total: 0,
         pendentes: 0,
         concluidas: 0,
-        alta: 0
+        alta: 0,
+        media: 0,
+        baixa: 0
     });
 
     useEffect(() => {
@@ -65,6 +67,14 @@ function Inicio() {
                 <div className="card-dashboard">
                     <h3>🔴 Prioridade Alta</h3>
                     <span>{dados.alta}</span>
+                </div>
+                <div className="card-dashboard">
+                    <h3>🟠 Prioridade Média</h3>
+                    <span>{dados.media}</span>
+                </div>
+                 <div className="card-dashboard">
+                    <h3>🟢 Prioridade Baixa</h3>
+                    <span>{dados.baixa}</span>
                 </div>
 
             </div>

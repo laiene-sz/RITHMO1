@@ -1,5 +1,5 @@
 .logo-area {
-    display: flex;
+    display:flex;
     align-items: center;
 }
 
@@ -14,4 +14,20 @@
     filter: drop-shadow(
         0 2px 4px rgba(0,0,0,0.15)
     );
+}
+
+.topo-data {
+    margin-top: 40px;
+
+    text-align:center;
+
+    font-size: 2.5rem;
+
+    padding: 10px;
+    
+    margin-bottom: 25px;
+}
+.topo-conteudo{
+    display:flex;
+    align-items: center;
 }
