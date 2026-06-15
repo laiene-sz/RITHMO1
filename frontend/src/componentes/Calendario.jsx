@@ -23,10 +23,8 @@ function Calendario() {
 
         try {
 
-            const resposta =
-                await axios.get(
-                    'http://localhost:3000/tarefas'
-                );
+                const resposta = await axios.get(
+    `${import.meta.env.VITE_API_URL}/tarefas`);
 
             setTarefas(resposta.data);
 
