@@ -1,66 +1,137 @@
 .layout {
-
     display: flex;
-
     min-height: calc(100vh - 120px);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .sidebar {
-
-    width: 240px;
-
+    width: 260px;
+    min-width: 260px;
     background: #1e293b;
-
     padding: 20px;
-
     display: flex;
-
     flex-direction: column;
-
     gap: 10px;
-
-    box-shadow:
-        2px 0 10px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .sidebar button {
-
     background: transparent;
-
     border: none;
-
     color: white;
-
     text-align: left;
-
     padding: 14px;
-
     border-radius: 10px;
-
     cursor: pointer;
-
     font-size: 1rem;
-
     transition: 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 .sidebar button:hover {
-
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .sidebar .ativo {
-
     background: #2563eb;
-
     font-weight: bold;
 }
 
 .conteudo {
-
     flex: 1;
-
+    min-width: 0;
     padding: 25px;
-
     background: #f5f7fa;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+/* ===== NOTEBOOKS ===== */
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+        min-width: 220px;
+        padding: 18px;
+    }
+
+    .conteudo {
+        padding: 20px;
+    }
+}
+
+/* ===== TABLETS ===== */
+@media screen and (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px;
+        gap: 8px;
+    }
+
+    .sidebar button {
+        flex: 1 1 calc(50% - 8px);
+        min-width: 140px;
+        text-align: center;
+    }
+
+    .conteudo {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* ===== CELULARES ===== */
+@media screen and (max-width: 480px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        flex-direction: column;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .sidebar button {
+        width: 100%;
+        flex: 1 1 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .conteudo {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* ===== CELULARES MUITO PEQUENOS ===== */
+@media screen and (max-width: 320px) {
+    .sidebar {
+        padding: 8px;
+    }
+
+    .sidebar button {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .conteudo {
+        padding: 8px;
+    }
 }

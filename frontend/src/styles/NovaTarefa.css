@@ -1,45 +1,139 @@
 .nova-tarefa-card {
-  background: rgba(15, 20, 40, 0.7);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 24px;
-  width: 90%;
-  max-width: 600px;
+    background: rgba(15, 20, 40, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 24px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .nova-tarefa-card h2 {
-  color: white;
-  margin-bottom: 20px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: clamp(1.5rem, 2.5vw, 2.4rem);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .campo-tarefa {
-  width: 90%;
-  padding: 16px;
-  border-radius: 12px;
-  margin-bottom: 20px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 .acoes-tarefa {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  border-radius: 12px;
-  
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-radius: 12px;
+    width: 100%;
 }
 
 .acoes-tarefa button {
-  margin-left: auto;
-  padding: 12px 24px;
-  border-radius: 12px;
+    margin-left: auto;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .acoes-tarefa {
-    flex-direction: column;
-  }
+.acoes-tarefa button:hover {
+    transform: translateY(-2px);
+}
 
-  .acoes-tarefa button {
-    width: 100%;
-    margin-left: 0;
-  }
+/* ===== NOTEBOOKS ===== */
+@media screen and (max-width: 1024px) {
+    .nova-tarefa-card {
+        max-width: 800px;
+        padding: 22px;
+    }
+
+    .campo-tarefa {
+        padding: 15px;
+    }
+}
+
+/* ===== TABLETS ===== */
+@media screen and (max-width: 768px) {
+    .nova-tarefa-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .nova-tarefa-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .campo-tarefa {
+        padding: 14px;
+    }
+
+    .acoes-tarefa {
+        flex-direction: column;
+    }
+
+    .acoes-tarefa button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* ===== CELULARES ===== */
+@media screen and (max-width: 480px) {
+    .nova-tarefa-card {
+        width: 100%;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .nova-tarefa-card h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .campo-tarefa {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .acoes-tarefa {
+        gap: 10px;
+    }
+
+    .acoes-tarefa button {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ===== CELULARES MUITO PEQUENOS ===== */
+@media screen and (max-width: 320px) {
+    .nova-tarefa-card {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .nova-tarefa-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .campo-tarefa {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .acoes-tarefa button {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
 }

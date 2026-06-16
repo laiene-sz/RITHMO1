@@ -1,64 +1,148 @@
 .categoria-container {
-
-    max-width: 1000px;
-
-    margin: auto;
-
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .categoria-container h2 {
-
     text-align: center;
-
     margin-bottom: 25px;
+    font-size: clamp(1.6rem, 2vw, 2.3rem);
+    word-wrap: break-word;
 }
 
 .categorias {
-
     display: flex;
-
     justify-content: center;
-
     gap: 15px;
-
     flex-wrap: wrap;
-
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .categorias button {
-
     background: #2563eb;
-
     color: white;
-
     border: none;
-
     padding: 12px 20px;
-
     border-radius: 10px;
-
     cursor: pointer;
-
     transition: 0.3s;
+    font-size: 1rem;
+    min-width: 140px;
 }
 
 .categorias button:hover {
-
     transform: translateY(-2px);
 }
 
 .card-tarefa {
-
     background: white;
-
     border-radius: 12px;
-
     padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-    margin-bottom: 10px;
+.card-tarefa h3,
+.card-tarefa h4 {
+    margin-bottom: 8px;
+}
 
-    box-shadow:
-        0 2px 8px rgba(0,0,0,0.08);
+.card-tarefa p {
+    line-height: 1.5;
+}
+
+/* ===== NOTEBOOKS ===== */
+@media screen and (max-width: 1024px) {
+    .categoria-container {
+        padding: 18px;
+    }
+
+    .categorias {
+        gap: 12px;
+    }
+}
+
+/* ===== TABLETS ===== */
+@media screen and (max-width: 768px) {
+    .categoria-container {
+        padding: 15px;
+    }
+
+    .categoria-container h2 {
+        font-size: 1.7rem;
+    }
+
+    .categorias {
+        gap: 10px;
+    }
+
+    .categorias button {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+        min-width: 120px;
+    }
+
+    .card-tarefa {
+        padding: 12px;
+    }
+}
+
+/* ===== CELULARES ===== */
+@media screen and (max-width: 480px) {
+    .categoria-container {
+        padding: 10px;
+    }
+
+    .categoria-container h2 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .categorias {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .categorias button {
+        width: 100%;
+        min-width: 100%;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .card-tarefa {
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ===== CELULARES PEQUENOS ===== */
+@media screen and (max-width: 320px) {
+    .categoria-container {
+        padding: 5px;
+    }
+
+    .categoria-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .categorias button {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .card-tarefa {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
 }
