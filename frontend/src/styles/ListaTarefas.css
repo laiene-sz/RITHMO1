@@ -1,14 +1,17 @@
 .lista-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 24px;
+    box-sizing: border-box;
 }
 
 .lista-titulo {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     color: #2c3e50;
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    word-wrap: break-word;
 }
 
 .tarefa-card {
@@ -20,25 +23,40 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    width: 100%;
+    box-sizing: border-box;
 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: 0.3s;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .tarefa-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.tarefa-info {
+    flex: 1;
+    min-width: 0;
 }
 
 .tarefa-info h3 {
     margin: 0;
     color: #34495e;
+    font-size: 1.2rem;
+    overflow-wrap: break-word;
 }
 
 .tarefa-info p {
     margin: 5px 0;
     color: #7f8c8d;
+    line-height: 1.5;
+    overflow-wrap: break-word;
 }
 
 .prioridade {
@@ -46,6 +64,7 @@
     border-radius: 20px;
     font-weight: bold;
     color: white;
+    display: inline-block;
 }
 
 .alta {
@@ -63,15 +82,24 @@
 .tarefa-acoes {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
-.btn-editar {
-    background: #3498db;
+.btn-editar,
+.btn-excluir,
+.btn-concluir {
     color: white;
     border: none;
     padding: 10px 14px;
     border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-editar {
+    background: #3498db;
 }
 
 .btn-editar:hover {
@@ -80,24 +108,20 @@
 
 .btn-excluir {
     background: #e74c3c;
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 8px;
-    cursor: pointer;
 }
 
 .btn-excluir:hover {
     background: #c0392b;
 }
+
 .btn-concluir {
     background: #27ae60;
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 8px;
-    cursor: pointer;
 }
+
+.btn-concluir:hover {
+    background: #219150;
+}
+
 .status-concluida {
     color: #27ae60;
     font-weight: bold;
@@ -106,4 +130,113 @@
 .status-pendente {
     color: #e67e22;
     font-weight: bold;
+}
+
+/* ===== NOTEBOOKS ===== */
+@media screen and (max-width: 1024px) {
+    .lista-container {
+        padding: 20px;
+    }
+
+    .tarefa-card {
+        gap: 15px;
+    }
+}
+
+/* ===== TABLETS ===== */
+@media screen and (max-width: 768px) {
+    .lista-container {
+        padding: 15px;
+    }
+
+    .lista-titulo {
+        font-size: 1.7rem;
+    }
+
+    .tarefa-card {
+        padding: 15px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .tarefa-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .tarefa-acoes {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ===== CELULARES ===== */
+@media screen and (max-width: 480px) {
+    .lista-container {
+        padding: 10px;
+    }
+
+    .lista-titulo {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .tarefa-card {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .tarefa-info {
+        width: 100%;
+    }
+
+    .tarefa-info h3 {
+        font-size: 1rem;
+    }
+
+    .tarefa-info p {
+        font-size: 0.9rem;
+    }
+
+    .tarefa-acoes {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-editar,
+    .btn-excluir,
+    .btn-concluir {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .prioridade {
+        margin-top: 5px;
+    }
+}
+
+/* ===== CELULARES MUITO PEQUENOS ===== */
+@media screen and (max-width: 320px) {
+    .lista-container {
+        padding: 8px;
+    }
+
+    .lista-titulo {
+        font-size: 1.2rem;
+    }
+
+    .tarefa-card {
+        padding: 12px;
+    }
+
+    .btn-editar,
+    .btn-excluir,
+    .btn-concluir {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
 }

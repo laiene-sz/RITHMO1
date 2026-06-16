@@ -1,48 +1,156 @@
 .calendario-container {
-
-    max-width: 1000px;
-
-    margin: auto;
-
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .calendario-container h2 {
-
     text-align: center;
-
     margin-bottom: 20px;
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    word-wrap: break-word;
 }
 
 .react-calendar {
-
-    width: 100%;
-
+    width: 100% !important;
+    max-width: 100%;
     border-radius: 15px;
-
     border: none;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.1);
-
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    box-sizing: border-box;
+}
+
+.react-calendar button {
+    word-break: break-word;
 }
 
 .tarefas-dia {
-
     margin-top: 25px;
+    width: 100%;
 }
 
 .evento {
-
     background: white;
-
     padding: 15px;
-
     margin-bottom: 10px;
-
     border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
 
-    box-shadow:
-        0 2px 8px rgba(0,0,0,0.08);
+.evento h3,
+.evento h4 {
+    margin-bottom: 8px;
+}
+
+.evento p {
+    line-height: 1.5;
+}
+
+/* ===== NOTEBOOKS ===== */
+@media (max-width: 1024px) {
+    .calendario-container {
+        padding: 18px;
+    }
+
+    .react-calendar {
+        padding: 12px;
+    }
+}
+
+/* ===== TABLETS ===== */
+@media (max-width: 768px) {
+    .calendario-container {
+        padding: 15px;
+    }
+
+    .calendario-container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .react-calendar {
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .evento {
+        padding: 12px;
+    }
+}
+
+/* ===== CELULARES ===== */
+@media (max-width: 480px) {
+    .calendario-container {
+        padding: 10px;
+    }
+
+    .calendario-container h2 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .react-calendar {
+        padding: 8px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+    }
+
+    .react-calendar button {
+        padding: 6px;
+        font-size: 0.85rem;
+    }
+
+    .tarefas-dia {
+        margin-top: 15px;
+    }
+
+    .evento {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .evento h3,
+    .evento h4 {
+        font-size: 1rem;
+    }
+
+    .evento p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== CELULARES PEQUENOS ===== */
+@media (max-width: 320px) {
+    .calendario-container {
+        padding: 5px;
+    }
+
+    .react-calendar {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    .react-calendar button {
+        padding: 4px;
+        font-size: 0.75rem;
+    }
+
+    .evento {
+        padding: 8px;
+    }
+
+    .evento h3,
+    .evento h4 {
+        font-size: 0.9rem;
+    }
+
+    .evento p {
+        font-size: 0.8rem;
+    }
 }
