@@ -16,23 +16,28 @@ function ListaTarefas() {
         buscarTarefas();
     }, []);
 
-    const buscarTarefas = async () => {
+  const buscarTarefas = async () => {
 
-        try {
+    try {
 
-            const resposta = await axios.get(
-                `${import.meta.env.VITE_API_URL}/tarefas`
-            );
+        const resposta = await axios.get(
+            `${import.meta.env.VITE_API_URL}/tarefas`
+        );
 
-            setTarefas(resposta.data);
+        console.log("===== RESPOSTA API =====");
+        console.log(resposta.data);
+        console.log("É array?", Array.isArray(resposta.data));
+        console.log("Tipo:", typeof resposta.data);
 
-        } catch (erro) {
+        setTarefas(resposta.data);
 
-            console.error(erro);
+    } catch (erro) {
 
-        }
+        console.error(erro);
 
-    };
+    }
+
+};
 
     const editarTarefa = (tarefa) => {
 
