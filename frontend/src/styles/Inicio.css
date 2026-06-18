@@ -7,14 +7,14 @@
 }
 
 .dashboard h2 {
-    color: #2c3e50;
+    color: var(--text);
     margin-bottom: 10px;
     font-size: clamp(1.8rem, 2.5vw, 2.5rem);
     word-wrap: break-word;
 }
 
 .dashboard p {
-    color: #7f8c8d;
+    color: var(--text-secondary);
     margin-bottom: 30px;
     font-size: 1rem;
     line-height: 1.6;
@@ -29,11 +29,13 @@
 }
 
 .card-dashboard {
-    background: white;
-    border-radius: 15px;
+    background: var(--surface);
+    border: 1px solid rgba(0,0,0,.05);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
     padding: 25px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
     transition: 0.3s;
     overflow-wrap: break-word;
     width: 100%;
@@ -42,22 +44,23 @@
 
 .card-dashboard:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-hover);
 }
 
 .card-dashboard h3 {
     margin-bottom: 15px;
-    color: #34495e;
+    color: var(--text);
     font-size: 1.2rem;
 }
 
 .card-dashboard span {
+
     font-size: 2rem;
     font-weight: bold;
-    color: #2563eb;
+    background: var(--primary-gradient);
+
 }
 
-/* ===== NOTEBOOKS ===== */
 @media screen and (max-width: 1024px) {
     .dashboard {
         padding: 24px;
@@ -68,7 +71,6 @@
     }
 }
 
-/* ===== TABLETS ===== */
 @media screen and (max-width: 768px) {
     .dashboard {
         padding: 20px;
@@ -101,7 +103,6 @@
     }
 }
 
-/* ===== CELULARES ===== */
 @media screen and (max-width: 480px) {
     .dashboard {
         padding: 12px;
@@ -138,7 +139,6 @@
     }
 }
 
-/* ===== CELULARES PEQUENOS ===== */
 @media screen and (max-width: 320px) {
     .dashboard {
         padding: 8px;

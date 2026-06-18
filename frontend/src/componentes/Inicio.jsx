@@ -22,14 +22,21 @@ function Inicio() {
         try {
 
             const resposta = await axios.get(
-    `${import.meta.env.VITE_API_URL}/tarefas`
+                `${import.meta.env.VITE_API_URL}/estatisticas`
             );
 
-            setDados(resposta.data);
+            setDados({
+                total: resposta.data.total || 0,
+                pendentes: resposta.data.pendentes || 0,
+                concluidas: resposta.data.concluidas || 0,
+                alta: resposta.data.alta || 0,
+                media: resposta.data.media || 0,
+                baixa: resposta.data.baixa || 0
+            });
 
         } catch (erro) {
 
-            console.error(erro);
+            console.error('Erro ao carregar estatísticas:', erro);
 
         }
 
@@ -68,11 +75,13 @@ function Inicio() {
                     <h3>🔴 Prioridade Alta</h3>
                     <span>{dados.alta}</span>
                 </div>
+
                 <div className="card-dashboard">
                     <h3>🟠 Prioridade Média</h3>
                     <span>{dados.media}</span>
                 </div>
-                 <div className="card-dashboard">
+
+                <div className="card-dashboard">
                     <h3>🟢 Prioridade Baixa</h3>
                     <span>{dados.baixa}</span>
                 </div>
@@ -82,6 +91,7 @@ function Inicio() {
         </div>
 
     );
+
 }
 
 export default Inicio;

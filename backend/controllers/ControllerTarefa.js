@@ -205,7 +205,9 @@ export const obterEstatisticas = (req, res) => {
             COUNT(*) AS total,
             SUM(concluida = 0) AS pendentes,
             SUM(concluida = 1) AS concluidas,
-            SUM(prioridade = 'Alta') AS alta
+            SUM(prioridade = 'Alta') AS alta,
+            SUM(prioridade = 'Média') AS media,
+            SUM(prioridade = 'Baixa') AS baixa
         FROM tarefas
     `;
 
@@ -223,7 +225,14 @@ export const obterEstatisticas = (req, res) => {
 
             }
 
-            res.status(200).json(resultado[0]);
+            res.status(200).json({
+                total: resultado[0].total || 0,
+                pendentes: resultado[0].pendentes || 0,
+                concluidas: resultado[0].concluidas || 0,
+                alta: resultado[0].alta || 0,
+                media: resultado[0].media || 0,
+                baixa: resultado[0].baixa || 0
+            });
 
         }
     );

@@ -1,7 +1,7 @@
 import '../styles/Topo.css';
 import logo from '../assets/logo.png';
 
-function Topo() {
+function Topo({ abrirMenu }) {
 
     const hoje = new Date().toLocaleDateString(
         'pt-BR',
@@ -13,24 +13,31 @@ function Topo() {
         }
     );
 
+    const dataFormatada =
+        hoje.charAt(0).toUpperCase() +
+        hoje.slice(1);
+
     return (
         <header className="topo">
 
-            <div className="topo-conteudo">
+            <button
+                className="btn-menu-topo"
+                onClick={abrirMenu}
+            >
+                ☰
+            </button>
 
-                <div className="logo-area">
+            <div className="topo-data">
+                {dataFormatada}
+            </div>
 
-                    <img
-                        src={logo}
-                        alt="RITHMO"
-                        className="logo-rithmo"
-                    />
+            <div className="logo-area">
 
-                </div>
-
-                <div className="topo-data">
-                    <span>{hoje}</span>
-                </div>
+                <img
+                    src={logo}
+                    alt="RITHMO"
+                    className="logo-rithmo"
+                />
 
             </div>
 

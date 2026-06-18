@@ -1,101 +1,137 @@
-.logo-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.topo {
+
     width: 100%;
+
+    height: 80px;
+
+    background: var(--surface);
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    box-shadow: var(--shadow);
 }
+.sidebar {
 
-.logo-rithmo {
-    height: 280px;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
+    position: fixed;
 
-    filter: drop-shadow(
-        0 2px 4px rgba(0, 0, 0, 0.15)
-    );
+    top: 0;
+    left: -280px;
+
+    width: 260px;
+    height: 100vh;
+
+    background: #1e293b;
+
+    border-right: 1px solid rgba(255,255,255,.08);
+
+    padding: 90px 20px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    transition: left .3s ease;
+
+    z-index: 3000;
+
+    box-shadow:
+        5px 0 20px rgba(0,0,0,.35);
+}
+.btn-menu-topo {
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
 }
 
 .topo-data {
-    margin-top: 40px;
-    margin-bottom: 25px;
-    padding: 10px;
+
+    flex: 1;
 
     text-align: center;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    color: var(--text);
+
+    text-transform: capitalize;
 }
 
-.topo-conteudo {
+.logo-area {
+
     display: flex;
+
     align-items: center;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-    width: 100%;
+
+    justify-content: flex-end;
+
+    min-width: 120px;
 }
 
-/* ===== NOTEBOOKS ===== */
-@media screen and (max-width: 1024px) {
-    .logo-rithmo {
-        height: 220px;
-    }
+.logo-rithmo {
 
-    .topo-data {
-        margin-top: 30px;
-        margin-bottom: 20px;
-    }
+    height: 55px;
 
-    .topo-conteudo {
-        gap: 20px;
-    }
+    width: auto;
+
+    object-fit: contain;
 }
 
-/* ===== TABLETS ===== */
 @media screen and (max-width: 768px) {
+
+    .topo {
+
+        height: 70px;
+
+        padding: 0 12px;
+    }
+
     .logo-rithmo {
-        height: 180px;
+
+        height: 45px;
     }
 
     .topo-data {
-        font-size: 2rem;
-        margin-top: 25px;
-        margin-bottom: 20px;
+
+        font-size: .95rem;
     }
 
-    .topo-conteudo {
-        gap: 15px;
-    }
 }
 
-/* ===== CELULARES ===== */
 @media screen and (max-width: 480px) {
-    .topo-conteudo {
-        flex-direction: column;
-        gap: 10px;
-    }
 
     .logo-rithmo {
-        height: 120px;
-        max-width: 90%;
+
+        height: 38px;
     }
 
     .topo-data {
-        font-size: 1.4rem;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        padding: 5px;
-    }
-}
 
-/* ===== CELULARES MUITO PEQUENOS ===== */
-@media screen and (max-width: 320px) {
-    .logo-rithmo {
-        height: 90px;
+        font-size: .8rem;
     }
 
-    .topo-data {
-        font-size: 1.1rem;
-    }
 }
